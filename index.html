@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>issys16</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+    <script>
+        function readCsv(data) {
+            var target = '#csv-body';
+            var csv = $.csv.toArrays(data);
+            var insert = '';
+            $(csv).each(function() {
+                if (this.length > 0) {
+                    insert += '<tr>';
+                    $(this).each(function() {
+                        insert += '<td>' + this + '</td>';
+                    });
+                    insert += '</tr>';
+                }
+            });
+            $(target).append(insert);
+        }
+        var csvfile = 'https://www.tgn.co.jp/nishikawa/test/M17_20210906.csv';
+        $(function(){
+            $.get(csvfile, readCsv, 'text');
+        });
+    </script>
 </head>
 <body>
-    <h1>issys16</h1>
+    <table>
+        <tbody id='csv-body' />
+    </table>
 </body>
 </html>
