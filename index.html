@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <title>Shogo Ishikuraのポートフォリオ | TOP</title>
     <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
-    <script>
-        function readCsv(data) {
-            var target = '#csv-body';
-            var csv = $.csv.toArrays(data);
-            var insert = '';
-            $(csv).each(function() {
-                if (this.length > 0) {
-                    insert += '<tr>';
-                    $(this).each(function() {
-                        insert += '<td>' + this + '</td>';
-                    });
-                    insert += '</tr>';
-                }
-            });
-            $(target).append(insert);
+    <meta name="robots" content="noindex" />
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?613b8f8629dc49f8948815e7ac1e02e5" charset="utf-8"></script>
+    <style>
+        * {
+            font-family: "A1ゴシック R";
         }
-        var csvfile = 'https://www.tgn.co.jp/nishikawa/test/M17_20210906.csv';
-        $(function(){
-            $.get(csvfile, readCsv, 'text');
-        });
-    </script>
+    </style>
 </head>
 <body>
-    <table>
-        <tbody id='csv-body' />
-    </table>
+  <h1>Shogo Ishikuraのポートフォリオ</h1>
 </body>
 </html>
